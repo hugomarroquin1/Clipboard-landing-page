@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+
+/* Josh's Custom CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  color: var(--dark-grayish-blue);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* additional reset */
+a {
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+/* root elements */
+:root {
+  /* fonts */
+  --ff-headings: "Bai Jamjuree", sans-serif;
+  --ff-body: "Bai Jamjuree", sans-serif;
+  --fw-400: 400;
+  --fw-600: 600;
+  /* font size */
+  --fs-400: 1rem;
+  --fs-600: 1.1rem;
+  --fs-800: 1.2rem;
+  /* colors */
+  --lighter-cyan: hsl(171, 66%, 54%);
+  --light-cyan: hsl(171, 66%, 44%);
+  --dark-cyan: hsl(171, 66%, 24%);
+  --lighter-blue: hsl(233, 100%, 79%);
+  --light-blue: hsl(233, 100%, 69%);
+  --dark-blue: hsl(233, 100%, 49%);
+  --dark-grayish-blue: hsl(210, 10%, 33%);
+  --grayish-blue: hsl(201, 11%, 66%);
+  --light-grayish-blue: hsl(201, 11%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+@media (max-width: 24rem) {
+  :root {
+    --fs-400: 1rem;
+    --fs-600: 1rem;
+    --fs-800: 1.1rem;
+  }
+}
+
+/* re-usable classes */
+.standard--section {
+  max-width: 75rem;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .standard--section {
+    padding: 2rem 2rem;
+  }
+}
+
+.primary--heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  font-size: clamp(1.4rem, 2.4vw + 1rem, 1.8rem);
+  margin-bottom: 1rem;
+}
+
+.secondary--heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  font-size: clamp(1.2rem, 2.13vw + 1rem, 1.6rem);
+  margin-bottom: 1rem;
+}
+
+.tertiary--heading {
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-800);
+  margin-bottom: 0.5rem;
+}
+
+.sub--text {
+  font-weight: var(--fw-400);
+  font-size: 1rem;
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+  color: var(--grayish-blue);
+}
+
+/* btn styling */
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.4em 1.2em;
+  color: var(--white);
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn--wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn--green {
+  background-color: var(--light-cyan);
+  box-shadow: 0 0.1rem var(--dark-cyan);
+}
+
+.btn--green:hover {
+  background-color: var(--lighter-cyan);
+}
+
+.btn--blue {
+  background-color: var(--light-blue);
+  box-shadow: 0 0.1rem var(--dark-blue);
+}
+
+.btn--blue:hover {
+  background-color: var(--lighter-blue);
+}
+
+/* hero */
+.header {
+  text-align: center;
+  background-image: url(/images/bg-header-desktop.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero__logo {
+  width: 4rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.hero__subheading {
+  font-size: var(--fs-600);
+}
+
+/* section 1 */
+.section-one__subheading {
+  max-width: 40rem;
+  margin-bottom: 4rem;
+}
+
+.section-one__features-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+}
+
+.section-one__features {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 22rem;
+  text-align: start;
+  margin-top: 2rem;
+}
+
+@media (max-width: 55rem) {
+  .section-one__features-container {
+    grid-template-columns: 1fr;
+  }
+  .section-one__img {
+    width: 30rem;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+  .section-one__features {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    column-gap: 4rem;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 100%;
+  }
+
+  .section-one__feature {
+    max-width: 20rem;
+  }
+}
+
+/* section 2 */
+.section-two__img {
+  margin: 0 auto;
+  width: 45rem;
+}
+
+/* section 3 - features */
+.section-three__features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 4rem 0 7rem;
+  column-gap: 4rem;
+  row-gap: 2rem;
+}
+
+.section-three__feature {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.section-three__feature-img {
+  margin: 0 auto 1rem;
+  width: 2rem;
+}
+
+/* section 3 - logos */
+.section-three__logos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  column-gap: 1rem;
+  row-gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.section-three__logo {
+  width: 8rem;
+}
+
+@media (max-width: 35rem) {
+  .section-three__logo {
+    width: 7rem;
+  }
+}
+
+/* CTA */
+.cta-section {
+  margin-bottom: 4rem;
+}
+
+/* footer */
+.footer {
+  background-color: var(--light-grayish-blue);
+}
+
+.footer__logo {
+  width: 2.5rem;
+}
+
+.footer__container {
+  padding: 2rem 2rem;
+  text-align: start;
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr;
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 1rem;
+}
+
+@media (max-width: 42rem) {
+  .footer__container {
+    grid-template-columns: 0.25fr 1fr;
+    row-gap: 2rem;
+  }
+  .footer__icons {
+    grid-column: span 2;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 35rem) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .footer__icons {
+    grid-column: auto;
+  }
+  .footer__links {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+}
+
+@media (max-width: 25rem) {
+  .footer__links {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.footer__link {
+  color: var(--dark-grayish-blue);
+}
+
+.footer__link,
+.footer__icon {
+  transition: all 0.3s;
+}
+
+.footer__link:hover,
+.footer__icon:hover {
+  color: var(--light-cyan);
+  cursor: pointer;
+}
+
+.footer__icons-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+}
